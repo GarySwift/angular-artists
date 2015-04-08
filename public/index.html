@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	
 	<title>{{ mainTitle }}</title>
 </head>
@@ -10,8 +10,18 @@
 	<div class="container">
 		<h1>{{ mainTitle }}</h1>
 	</div>
+  <ul class="artistlist">
+    <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
+      <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">
+      <div class="info">
+        <h2>{{item.name}}</h2>
+        <h3>{{item.reknown}}</h3>
+      </div>
+    </li>
+  </ul>
 
 
+</h1>
 <script src="lib/angular/angular.min.js"></script>
 <script src="javascripts/controllers.js"></script>	
 </body>
